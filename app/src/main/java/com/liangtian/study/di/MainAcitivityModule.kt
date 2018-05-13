@@ -1,6 +1,7 @@
 package com.liangtian.study.di
 
 import com.liangtian.study.MainActivity
+import com.liangtian.study.ui.SearchActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -11,4 +12,7 @@ import dagger.android.ContributesAndroidInjector
 abstract class MainAcitivityModule {
     @ContributesAndroidInjector
     abstract fun contributeMainActivity(): MainActivity
+
+    @ContributesAndroidInjector(modules = [FragmentBuildersModule::class])
+    abstract fun contributeSearchActivity(): SearchActivity
 }
